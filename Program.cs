@@ -176,16 +176,16 @@ namespace NinetiesTV
     // 22. Return the names of all shows as a single string seperated by a comma and a space.
     static string AllNamesWithCommas(List<Show> shows)
     {
-      List<string> list = shows.Select(s => s.Name).ToList();
-      return String.Join(",", list);
+      List<string> space = shows.Select(s => s.Name).ToList();
+      return String.Join(", ", space);
     }
 
     // 23. Do the same as above, but put the word "and" between the second-to-last and last show name.
     static string AllNamesWithCommasPlsAnd(List<Show> shows)
     {
-      List<string> listA = shows.Select(s => s.Name).Take(shows.Count - 1).ToList();
-      List<string> listB = shows.Skip(shows.Count - 1).Select(s => s.Name).ToList();
-      return String.Join(",", listA) + ", and " + String.Join("", listB);
+      List<string> spaceA = shows.Select(s => s.Name).Take(shows.Count - 1).ToList();
+      List<string> spaceB = shows.Skip(shows.Count - 1).Select(s => s.Name).ToList();
+      return String.Join(",", spaceA) + ", and " + String.Join("", spaceB);
     }
 
 
